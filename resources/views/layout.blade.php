@@ -65,8 +65,11 @@
                     <a href="contact">Kontakt</a>
                 </li>
 
-                @if(Auth::user())
 
+                @guest
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                @else
                     <li>
                         <a href="/create">Create</a>
                     </li>
@@ -74,14 +77,26 @@
                     <li>
                         <a href="/delete">Delete</a>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                    <li>
-                       <b></b> <a href="/logout">
-                            Logout
-                        </a></b>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
                     </li>
-
-                @endif
+                @endguest
             </ul>
         </div>
         <!-- /.navbar-collapse -->

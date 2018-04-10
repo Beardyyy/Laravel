@@ -18,7 +18,7 @@ Route::get('/blog', 'Posts@showBlog');
 Route::get('/contact', 'Posts@showContact');
 Route::get('/about', 'Posts@showAbout');
 Route::get('/delete', 'AdminsController@showDelete');
-Route::delete('/delete{id}', 'AdminsController@delete')->name('delete');
+Route::delete('/delete/{id}', 'AdminsController@delete')->name('delete');
 
 
 
