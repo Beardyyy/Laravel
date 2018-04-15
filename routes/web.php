@@ -31,4 +31,5 @@ Route::get('/create', 'AdminsController@create')->middleware('auth');
 Route::post('/create', 'AdminsController@store')->middleware('auth');
 Route::get('/posts', 'Posts@showAll');
 Route::get('/logout', 'AdminsController@logout');
+Route::get('/edit', 'AdminsController@edit');
 
