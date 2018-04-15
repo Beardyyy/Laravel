@@ -34,3 +34,4 @@ Route::delete('/delete/{id}', 'AdminsController@delete')->middleware('auth')->na
 Route::get('/edit/{id}', 'AdminsController@edit')->middleware('auth');
 Route::put('/update/{id}', 'AdminsController@update');
 
+
