@@ -11,14 +11,13 @@
 |
 */
 
-//use App\Http\Controllers\LoginController;
+
 
 Route::get('/', 'Posts@index');
 Route::get('/blog', 'Posts@showBlog');
 Route::get('/contact', 'Posts@showContact');
 Route::get('/about', 'Posts@showAbout');
-Route::get('/delete', 'AdminsController@showDelete');
-Route::delete('/delete/{id}', 'AdminsController@delete')->name('delete');
+
 
 
 
@@ -29,6 +28,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create', 'AdminsController@create')->middleware('auth');
 Route::post('/create', 'AdminsController@store')->middleware('auth');
-Route::get('/posts', 'Posts@showAll');
 Route::get('/logout', 'AdminsController@logout');
+Route::get('/delete', 'AdminsController@showDelete')->middleware('auth');
+Route::delete('/delete/{id}', 'AdminsController@delete')->middleware('auth')->name('delete');
+Route::get('/edit/{id}', 'AdminsController@edit')->middleware('auth');
+Route::put('/update/{id}', 'AdminsController@update');
 

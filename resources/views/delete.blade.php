@@ -3,7 +3,8 @@
 @section('content')
 
     <div class="pg-faded p-4 my-4">
-        <h3 class="brand">Create a post</h3>
+        <h3 class="brand">Delete post</h3>
+
 
 
         @foreach($posts as $post)
@@ -14,7 +15,11 @@
                 {{ method_field('DELETE') }}
                 <input class="btn btn-danger" type="submit" value="Delete">
             </form>
+                <br>
+            <a href="{{ url('edit', $post->id) }}">edit</a>
             @endforeach
+
     </div>
+
 
 @endsection

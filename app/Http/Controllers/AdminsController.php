@@ -58,4 +58,25 @@ class AdminsController extends Controller
         Session::flush();
         return redirect('/');
     }
+
+
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        return view('edit', compact('post'));
+
+    }
+
+
+    public function update($id)
+    {
+        $post = Post::find($id);
+        $post->title = $request('title');
+        $post->subTitle = $request('subTitle');
+        $post->body = $request('body');
+        $post->img = $request('img');
+        $post->update();
+
+        return redirect('/');
+    }
 }

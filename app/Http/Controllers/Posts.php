@@ -38,11 +38,4 @@ class Posts extends Controller
         return view('contact');
     }
 
-
-
-    public function showAll()
-    {
-
-        return view('posts');
-    }
 }
