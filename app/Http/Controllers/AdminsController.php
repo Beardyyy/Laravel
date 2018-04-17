@@ -68,13 +68,13 @@ class AdminsController extends Controller
     }
 
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $post = Post::find($id);
-        $post->title = $request('title');
-        $post->subTitle = $request('subTitle');
-        $post->body = $request('body');
-        $post->img = $request('img');
+        $post->title = $request->title;
+        $post->subTitle = $request->subTitle;
+        $post->body = $request->body;
+        $post->img = $request->img;
         $post->update();
 
         return redirect('/');
