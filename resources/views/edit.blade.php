@@ -8,6 +8,7 @@
 
         <form class="form-horizontal" method="POST" action="/update/{{ $post->id }}">
             {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <div class="form-group">
                 <label class="control-label col-sm-2" for="title">Titile:</label>
                 <div class="col-sm-10">
