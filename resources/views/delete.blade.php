@@ -16,7 +16,11 @@
                 <input class="btn btn-danger" type="submit" value="Delete">
             </form>
                 <br>
-            <a href="{{ url('edit', $post->id) }}">edit</a>
+            <ul class="">
+                <li>
+                    <a href="{{ url('edit', $post->id) }}">edit</a>
+                </li>
+            </ul>
             @endforeach
 
     </div>
