@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="row">
-    <div class="pg-faded p-4 my-4">
+    <div class="box">
+    <div class="col-md-12">
         <h3 class="brand">Create a post</h3>
 
 
@@ -47,6 +48,7 @@
         </form>
 
 
+    </div>
     </div>
     </div>
 
