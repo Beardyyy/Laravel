@@ -27,6 +27,7 @@ class AdminsController extends Controller
             'subTitle' => 'required',
             'body' => 'required',
             'img' => 'required'
+
         ]);
 
         Post::create(request(['title', 'subTitle', 'body', 'img']));
