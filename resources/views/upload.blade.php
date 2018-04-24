@@ -8,7 +8,7 @@
 
         <form class="form-horizontal" method="POST" action="/create"  enctype="multipart/form-data">
             {{ csrf_field() }}
-            
+
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="img" name="img">Image:</label>
