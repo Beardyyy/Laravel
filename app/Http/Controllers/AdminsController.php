@@ -95,7 +95,7 @@ class AdminsController extends Controller
         $imgName = $img->getClientOriginalName();
         $path = public_path('/img');
         $img->move($path, $imgName);
-        dd($imgName);
+        redirect('/blog');
 
     }
 }
