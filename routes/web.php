@@ -33,5 +33,8 @@ Route::get('/delete', 'AdminsController@showDelete')->middleware('auth');
 Route::delete('/delete/{id}', 'AdminsController@delete')->middleware('auth')->name('delete');
 Route::get('/edit/{id}', 'AdminsController@edit')->middleware('auth');
 Route::put('/update/{id}', 'AdminsController@update');
+Route::get('/upload', 'AdminsController@form');
+Route::post('/upload', 'AdminsController@storeImg');
+
 
 

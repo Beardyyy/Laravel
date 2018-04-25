@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+
 
 class AdminsController extends Controller
 {
@@ -79,5 +81,21 @@ class AdminsController extends Controller
         $post->update();
 
         return redirect('/');
+    }
+
+
+    public function form()
+    {
+        return view('upload');
+    }
+
+    public function storeImg(Request $request)
+    {
+        $img = $request->file('file');
+        $imgName = $img->getClientOriginalName();
+        $path = public_path('/img');
+        $img->move($path, $imgName);
+        dd($imgName);
+
     }
 }

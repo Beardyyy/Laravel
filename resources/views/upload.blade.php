@@ -6,7 +6,7 @@
         <h3 class="brand">Create a post</h3>
 
 
-        <form class="form-horizontal" method="POST" action="/create"  enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="/upload"  enctype="multipart/form-data">
             {{ csrf_field() }}
 
 
