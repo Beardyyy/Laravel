@@ -20,6 +20,7 @@ class AdminsController extends Controller
     }
 
 
+    /* Creating a new post */
 
     public function store()
     {
@@ -38,6 +39,7 @@ class AdminsController extends Controller
 
     }
 
+    /* Rendering all posts */
 
     public function showDelete()
     {
@@ -47,6 +49,8 @@ class AdminsController extends Controller
     }
 
 
+    /* Deleting chosen post */
+
     public function delete($id)
     {
        	$post = Post::find($id);
@@ -54,6 +58,8 @@ class AdminsController extends Controller
         return redirect()->route('home');
     }
 
+
+    /* Loging out */
 
     public function logout()
     {
@@ -63,6 +69,8 @@ class AdminsController extends Controller
     }
 
 
+    /* Renderig chosen post */
+
     public function edit($id)
     {
         $post = Post::find($id);
@@ -70,6 +78,8 @@ class AdminsController extends Controller
 
     }
 
+
+    /* Updating data for specific post */
 
     public function update(Request $request, $id)
     {
@@ -84,10 +94,14 @@ class AdminsController extends Controller
     }
 
 
+
     public function form()
     {
         return view('upload');
     }
+
+
+    /* Uploading photo */
 
     public function storeImg(Request $request)
     {
