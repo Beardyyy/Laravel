@@ -15,6 +15,7 @@
 
 Route::get('/', 'Posts@index');
 Route::get('/blog', 'Posts@showBlog');
+Route::get('/blog/{post}', 'Posts@showBlogId');
 Route::get('/contact', 'Posts@showContact');
 Route::get('/about', 'Posts@showAbout');
 

@@ -2,6 +2,10 @@
 
 @section('content')
 
+    <div class="container">
+    <div class="row">
+    <div class="box">
+    <div class="col-md-12 text-center">
     <div class="pg-faded p-4 my-4">
         <h3 class="brand">Delete post</h3>
 
@@ -23,6 +27,10 @@
             </ul>
             @endforeach
 
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 
 

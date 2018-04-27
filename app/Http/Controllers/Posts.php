@@ -32,6 +32,13 @@ class Posts extends Controller
     }
 
 
+    public function showBlogId(Post $post)
+    {
+
+        return view('blogId', compact('post'));
+    }
+
+
 
     public function showContact()
     {

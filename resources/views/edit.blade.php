@@ -1,9 +1,10 @@
 @extends('layout')
 
 @section('content')
+    <div class="container">
     <div class="row">
     <div class="box">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
         <h3 class="brand">Create a post</h3>
 
 
@@ -43,11 +44,12 @@
             </div>
 
             <div class="form-group">
-                <a href="http://localhost:8000/edit/{{ $post->id }}" class="btn btn-default btn-lg">back</a>
+                <a href="http://localhost:8000/blog" class="btn btn-warning btn-lg">back</a>
             </div>
         </form>
 
 
+    </div>
     </div>
     </div>
     </div>

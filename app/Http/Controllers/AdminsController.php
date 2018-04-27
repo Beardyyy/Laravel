@@ -55,7 +55,7 @@ class AdminsController extends Controller
     {
        	$post = Post::find($id);
        	$post->delete();
-        return redirect()->route('home');
+        return redirect('/delete');
     }
 
 
