@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,8 +19,11 @@ class AdminsController extends Controller
     }
 
 
+
     /* Creating a new post */
 
+
+    /*
     public function store()
     {
 
@@ -38,6 +40,24 @@ class AdminsController extends Controller
         return redirect('/blog');
 
     }
+    */
+
+    public function store(Request $request, Post $post)
+    {
+
+        $post->title = $request->title;
+        $post->subTitle = $request->subTitle;
+        $post->body = $request->body;
+        $img = $request->file('file');
+        $img->move(public_path('/img'), $img->getClientOriginalName());
+        $post->img = "img/" . $img->getClientOriginalName();
+        $post->save();
+
+        return redirect('/blog');
+    }
+
+
+
 
     /* Rendering all posts */
 
@@ -49,14 +69,19 @@ class AdminsController extends Controller
     }
 
 
+
+
     /* Deleting chosen post */
 
     public function delete($id)
     {
        	$post = Post::find($id);
+       	unlink(public_path('/') . $post->img);
        	$post->delete();
         return redirect('/delete');
     }
+
+
 
 
     /* Loging out */
@@ -69,6 +94,8 @@ class AdminsController extends Controller
     }
 
 
+
+
     /* Renderig chosen post */
 
     public function edit($id)
@@ -79,10 +106,14 @@ class AdminsController extends Controller
     }
 
 
+
+
     /* Updating data for specific post */
 
     public function update(Request $request, $id)
     {
+
+
         $post = Post::find($id);
         $post->title = $request->title;
         $post->subTitle = $request->subTitle;
@@ -95,21 +126,22 @@ class AdminsController extends Controller
 
 
 
+
     public function form()
     {
         return view('upload');
     }
 
 
+
+
     /* Uploading photo */
 
     public function storeImg(Request $request)
     {
-        $img = $request->file('file');
-        $imgName = $img->getClientOriginalName();
-        $path = public_path('/img');
-        $img->move($path, $imgName);
-        return redirect('/blog');
 
+        $img = $request->file('file');
+        $img->move(public_path('/img'), $img->getClientOriginalName());
+        return redirect('/blog');
     }
 }

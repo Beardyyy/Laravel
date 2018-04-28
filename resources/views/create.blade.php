@@ -6,7 +6,7 @@
     <h3 class="brand">Create a post</h3>
 
 
-    <form class="form-horizontal" method="POST" action="/create">
+    <form class="form-horizontal" method="POST" action="/create" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label class="control-label col-sm-2" for="title">Titile:</label>
@@ -27,10 +27,11 @@
             </div>
         </div>
 
+
         <div class="form-group">
-            <label class="control-label col-sm-2" for="img" name="img">Image:</label>
+            <label class="control-label col-sm-2" for="file" name="file">Image:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="body" placeholder="Enter image url" name="img">
+                <input type="file" class="form-control" id="file" name="file">
             </div>
         </div>
 
