@@ -25,7 +25,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="body" name="body">Body:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="body" placeholder="Enter text" name="body">
+                 <textarea name="body" class="form-control" placeholder="Enter text" rows="3" cols="30"></textarea>
             </div>
         </div>
 
