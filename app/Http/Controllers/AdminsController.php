@@ -45,6 +45,13 @@ class AdminsController extends Controller
     public function store(Request $request, Post $post)
     {
 
+        $request->validate([
+            'title' => 'required|string',
+            'subTitle' => 'required|string',
+            'body' => 'required|string',
+            'file' => 'image'
+        ]);
+
         $post->title = $request->title;
         $post->subTitle = $request->subTitle;
         $post->body = $request->body;
@@ -125,23 +132,4 @@ class AdminsController extends Controller
     }
 
 
-
-
-    public function form()
-    {
-        return view('upload');
-    }
-
-
-
-
-    /* Uploading photo */
-
-    public function storeImg(Request $request)
-    {
-
-        $img = $request->file('file');
-        $img->move(public_path('/img'), $img->getClientOriginalName());
-        return redirect('/blog');
-    }
 }
